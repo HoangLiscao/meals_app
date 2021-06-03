@@ -22,6 +22,7 @@ class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
   var namename = "Hoang";
+  var namename2 = "Hoang2";
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
