@@ -10,7 +10,7 @@ import 'package:meals/widget_model/category_item.dart';
         appBar: AppBar(title: Text("DeliMeals"),)
         ,body: GridView(
         padding: EdgeInsets.all(15),
-        children: DUMMY_CATEGORIES.map((categoryData) => CategoryItem(categoryData.title, categoryData.color)).toList(),
+        children: DUMMY_CATEGORIES.map((categoryData) => CategoryItem(categoryData.id, categoryData.title, categoryData.color)).toList(),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent (
             maxCrossAxisExtent: 200,
             childAspectRatio: 3/2,
