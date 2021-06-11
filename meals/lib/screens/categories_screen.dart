@@ -6,9 +6,7 @@ import 'package:meals/widgets_model/category_item.dart';
 
     @override
     Widget build(BuildContext context) {
-      return Scaffold(
-        appBar: AppBar(title: Text("DeliMeals"),)
-        ,body: GridView(
+      return GridView(
         padding: EdgeInsets.all(15),
         children: DUMMY_CATEGORIES.map((categoryData) => CategoryItem(categoryData.id, categoryData.title, categoryData.color)).toList(),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent (
@@ -17,7 +15,6 @@ import 'package:meals/widgets_model/category_item.dart';
             crossAxisSpacing: 20,
             mainAxisSpacing: 20
         ),
-
-      ),);
+      );
     }
   }

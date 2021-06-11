@@ -6,11 +6,6 @@ import 'package:meals/widgets_model/meal_item.dart';
 class CategoryMealsScreen extends StatelessWidget {
   static const routeName = "/category-meals";
 
-  // final String categoryId;
-  // final String categoryTitle;
-  //
-  // CategoryMealsScreen(this.categoryId, this.categoryTitle);
-
   @override
   Widget build(BuildContext context) {
     final routeAgrs = ModalRoute
