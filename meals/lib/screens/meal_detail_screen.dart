@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals/model/Meal.dart';
+import 'package:meals/screens/favourites_screen.dart';
 import 'package:meals/ultis/dummy_data.dart';
 import 'package:meals/widgets_model/meal_item.dart';
 
@@ -11,7 +12,10 @@ class MealDetailScreen extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Text(
         text,
-        style: Theme.of(context).textTheme.title,
+        style: Theme
+            .of(context)
+            .textTheme
+            .title,
       ),
     );
   }
@@ -32,7 +36,10 @@ class MealDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final routeAgrs =
-        ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+    ModalRoute
+        .of(context)!
+        .settings
+        .arguments as Map<String, String>;
     final mealId = routeAgrs["id"] as String;
 
     final selectedMeal = DUMMY_MEALS.firstWhere((meal) {
@@ -58,8 +65,11 @@ class MealDetailScreen extends StatelessWidget {
             buildContainer(
               ListView.builder(
                   itemCount: selectedMeal.ingredients.length,
-                  itemBuilder: (context, index) => Card(
-                        color: Theme.of(context).accentColor,
+                  itemBuilder: (context, index) =>
+                      Card(
+                        color: Theme
+                            .of(context)
+                            .accentColor,
                         child: Padding(
                             padding: EdgeInsets.symmetric(
                                 vertical: 5, horizontal: 10),
@@ -69,14 +79,21 @@ class MealDetailScreen extends StatelessWidget {
             buildSectionTitle(context, "Steps"),
             buildContainer(ListView.builder(
                 itemCount: selectedMeal.steps.length,
-                itemBuilder: (context, index) => ListTile(
+                itemBuilder: (context, index) =>
+                    ListTile(
                       leading: CircleAvatar(
-                        child: Text("# ${index + 1}"),
+
                       ),
                       title: Text(selectedMeal.steps[index]),
                     )))
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.delete),
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
       ),
     );
   }
