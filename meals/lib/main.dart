@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:meals/screens/category_meals_screen.dart';
-import 'package:meals/screens/favourites_screen.dart';
 import 'package:meals/screens/filter_screen.dart';
 import 'package:meals/screens/meal_detail_screen.dart';
 import 'package:meals/screens/tabs_screen.dart';
@@ -56,7 +55,7 @@ class _MyAppState extends State<MyApp> {
 
     if (existingIndex >= 0){
       setState(() {
-        _favouriteMeals.remove(existingIndex);
+        _favouriteMeals.removeAt(existingIndex);
       });
     } else {
       setState(() {
